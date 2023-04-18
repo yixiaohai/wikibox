@@ -1,0 +1,268 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/toolcommon/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/toolcommon/index.js" />
+	</scripts>
+	<Panel class="fc-tool minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-tool-head">
+			<Label text="#toolCommonButton"></Label>
+			<Button
+				onactivate="GameUI.FiveCloudLayer.Close('toolcommon', 'left')" />
+		</Panel>
+		<Panel class="fc-tool-content">
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Hero" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'ResetHero' })">
+					<Label text="#ResetHero" />
+				</Button>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'RespawnHero' })">
+					<Label text="#RespawnHero" />
+				</Button>
+				<Button class="fc-tool-button"
+					onactivate="ToggleHeroPanel('ReplaceHero')">
+					<Label text="#ReplaceHero" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('SetGold')">
+					<Label text="#SetGold" />
+				</Button>
+				<Button class="fc-tool-button green"
+					onactivate="ToggleHeroPanel('AddHero_Friend')">
+					<Label text="#AddHero_Friend" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="ToggleHeroPanel('AddHero_Enemy')">
+					<Label text="#AddHero_Enemy" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'ClearInventory' })">
+					<Label text="#ClearInventory" />
+				</Button>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'LevelUp' })">
+					<Label text="#LevelUp" />
+				</Button>
+				<Button class="fc-tool-button" id="MaxLevelUp"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'MaxLevelUp' })">
+					<Label text="#MaxLevelUp" />
+				</Button>
+			</Panel>
+
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button green"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'GetAbilityPoint' })">
+					<Label text="#GetAbilityPoint" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'RemoveAbilityPoint' })">
+					<Label text="#RemoveAbilityPoint" />
+				</Button>
+				<Button class="fc-tool-button" id="ReplaceAbility"
+					onactivate="ToggleHeroPanel('ReplaceAbility')">
+					<Label text="#ReplaceAbility" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Unit" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="EntInfoButton"
+					onactivate="EntInfoButton()">
+					<Label text="#EntInfoButton"></Label>
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="EntKVButton"
+					onactivate="EntKVButton()">
+					<Label text="#EntKVButton" />
+				</ToggleButton>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'RefreshStatus' })">
+					<Label text="#RefreshStatus" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'AddDummy' })">
+					<Label text="#AddDummy" />
+				</Button>
+				<Button class="fc-tool-button green"
+					onactivate="ToggleUnitPicker('AddUnit_Friend')">
+					<Label text="#AddUnit_Friend" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="ToggleUnitPicker('AddUnit_Enemy')">
+					<Label text="#AddUnit_Enemy" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SelfMutilation' })">
+					<Label text="#SelfMutilation"></Label>
+				</Button>
+				<Button class="fc-tool-button" onactivate="MoveToPoint()">
+					<Label text="#MoveToPoint" />
+				</Button>
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('MoveToPosition')">
+					<Label text="#moveToCoordinate" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'RemoveUnit' })">
+					<Label text="#RemoveUnit" />
+				</Button>
+				<Button class="fc-tool-button green"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'Invulnerability', checked: true })">
+					<Label text="#AddInvulnerability" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'Invulnerability', checked: false })">
+					<Label text="#RemoveInvulnerability" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('SetAngle')">
+					<Label text="#SetAngle" />
+				</Button>
+			</Panel>
+
+			<Panel class="fc-tool-row rune-panel">
+				<Label text="#rune" class="rune-panel-label" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneDoubleDamagePressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonDoubleDamage&apos;, &apos;#DOTA_HUD_Rune_DoubleDamage&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonDoubleDamage&apos; )">
+					<DOTAEmoticon id="RuneEmoticonDoubleDamage" alias="doubledamage"
+						animating="false" />
+				</Button>
+				<Panel class="FillWidth" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneHastePressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonHaste&apos;, &apos;#DOTA_HUD_Rune_Haste&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonHaste&apos; )">
+					<DOTAEmoticon id="RuneEmoticonHaste" alias="haste" animating="false" />
+				</Button>
+				<Panel class="FillWidth" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneIllusionPressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonIllusion&apos;, &apos;#DOTA_HUD_Rune_Illusion&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonIllusion&apos; )">
+					<DOTAEmoticon id="RuneEmoticonIllusion" alias="illusion" animating="false" />
+				</Button>
+				<Panel class="FillWidth" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneInvisibilityPressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonInvisibility&apos;, &apos;#DOTA_HUD_Rune_Invisibility&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonInvisibility&apos; )">
+					<DOTAEmoticon id="RuneEmoticonInvisibility" alias="invisibility"
+						animating="false" />
+				</Button>
+				<Panel class="FillWidth" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneRegenerationPressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonRegeneration&apos;, &apos;#DOTA_HUD_Rune_Regeneration&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonRegeneration&apos; )">
+					<DOTAEmoticon id="RuneEmoticonRegeneration" alias="regeneration"
+						animating="false" />
+				</Button>
+				<Panel class="FillWidth" />
+				<Button
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SpawnRuneArcanePressed' })"
+					onmouseover="MouseOverRune( &apos;RuneEmoticonArcane&apos;, &apos;#DOTA_HUD_Rune_Arcane&apos; )"
+					onmouseout="MouseOutRune( &apos;RuneEmoticonArcane&apos; )">
+					<DOTAEmoticon id="RuneEmoticonArcane" alias="arcane_rune" animating="false" />
+				</Button>
+			</Panel>
+
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Map" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('SetCameraDistance')">
+					<Label text="#SetCameraDistance" />
+				</Button>
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('HostTimescale')">
+					<Label text="#HostTimescale" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'DayNightCycle' })">
+					<Label text="#DayNightCycle" />
+				</Button>
+				<ToggleButton class="fc-tool-button" id="PauseDayNightCycle"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('PauseDayNightCycle')">
+					<Label text="#PauseDayNightCycle" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="EasyBuy"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('EasyBuy')">
+					<Label text="#EasyBuy" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="FreeSpells"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('FreeSpells')">
+					<Label text="#FreeSpells" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="HeroFastRespawn"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('HeroFastRespawn')">
+					<Label text="#HeroFastRespawn" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="HeroSituRespawn"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('HeroSituRespawn')">
+					<Label text="#HeroSituRespawn" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="PassiveGold"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('PassiveGold')">
+					<Label text="#PassiveGold"></Label>
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="NoFogOfWar"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('NoFogOfWar')">
+					<Label text="#NoFogOfWar" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Range" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('ShowRange')">
+					<Label text="#ShowRange" />
+				</Button>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'GetDistance' })">
+					<Label text="#GetDistance" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="ShowBoundingRadius"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowBoundingRadius')">
+					<Label text="#ShowBoundingRadius" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="ShowSelectionBoxes"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowSelectionBoxes')">
+					<Label text="#ShowSelectionBoxes" />
+				</ToggleButton>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

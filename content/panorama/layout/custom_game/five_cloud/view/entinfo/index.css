@@ -1,0 +1,96 @@
+
+
+.fc-info-abilities {
+  margin-top: 10px;
+  border-top: 1px solid #bbfbff;
+  padding: 20px;
+  flow-children: right-wrap;
+  horizontal-align: middle;
+}
+
+.fc-info-ability {
+  margin: 5px;
+  width: 50px;
+  flow-children: down;
+}
+
+.fc-info-ability-image {
+  width: 50px;
+  height: 50px;
+}
+
+.fc-info-ability-button {
+  background-color: #3e4144;
+  border: 1px solid #4e5155;
+  width: 100%;
+  height: 28px;
+  transition-property: background-color, border, color;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  padding: 4px;
+}
+
+.fc-info-ability-button:hover {
+  background-color: gradient( linear, 0% 0%, 70% 0%, from( #676b70), to( #3e4144));
+  border: 1px solid #686b70;
+}
+
+.fc-info-ability-button.red {
+  background-color: #6D4A4E;
+  border: 1px solid #9b6369;
+  transition-property: background-color, border;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+
+.fc-info-ability-button.red:hover {
+  background-color: gradient( linear, 0% 0%, 70% 0%, from( #be4f5c), to( #913943));
+  border: 1px solid #eb5f70;
+}
+
+.fc-info-ability-button Label {
+  horizontal-align: center;
+  vertical-align: middle;
+  color: #D8DADE;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: defaultFont;
+  font-weight: normal;
+  text-overflow: shrink;
+  letter-spacing: 1px;
+}
+
+.fc-info-ability-button:hover Label {
+  color: #FFF;
+}
+
+.modifers {
+  width: 95%;
+  border-top: 1px solid #bbfbff;
+  flow-children: down;
+  horizontal-align: middle;
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.modifers-title {
+  width: 100%;
+  text-align: center;
+  color: gradient( linear, 0% 0%, 100% 0%, from( #c0f8ff), color-stop(0.5, #bbfbff), to( #c0f8ff));
+  text-shadow: 0px 0px 16px 1.0 #3bb3ff22;
+}
+
+.modifers_list {
+  flow-children: down;
+  width: 100%;
+  padding: 10px 10px 10px 4px;
+}
+
+
+
+
+
+
+

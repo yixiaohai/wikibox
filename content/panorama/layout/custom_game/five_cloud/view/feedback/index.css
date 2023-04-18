@@ -1,0 +1,85 @@
+
+.fc-feedback {
+    border: 1px solid #5e6869;
+    background-color: #181818dd;
+    box-shadow: #000000aa 0px 0px 8px 0px;
+    padding: 32px;
+    width: 700px;
+    vertical-align: middle;
+    horizontal-align: center;
+    opacity: 1;
+    transform: translateX( 0) translateY( 0);
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.0s;
+    flow-children: down;
+}
+
+.fc-feedback.minimized {
+    opacity: 0;
+    transform: translateX( 0) translateY( -150px);
+}
+
+.fc-feedback-title {
+    font-size: 25px;
+    font-weight: thin;
+    color: #fff;
+    horizontal-align: center;
+}
+
+.fc-feedback-content {
+    horizontal-align: center;
+    flow-children: down;
+    margin-top: 20px;
+}
+
+.fc-feedback-input {
+    border: 1px solid #373C44;
+    width: 700px;
+    height: 150px;
+    padding: 5px 7px 3px 7px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #373C44), to( #222222FF));
+    color: white;
+    font-size: 20px;
+    text-overflow: clip;
+    white-space: normal;
+    overflow: squish scroll;
+}
+
+.fc-feedback-button-box {
+    flow-children: right;
+    horizontal-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.fc-feedback-button {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #222222), to( #4B555D));
+    background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+    background-size: cover;
+    border: 1px solid #83838390;
+    margin: 8px;
+    width: 110px;
+    padding: 10px 30px;
+    transition-property: background-color, wash-color;
+    transition-delay: 0.0s;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+
+.fc-feedback-button:hover {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #58636e), to( #53626e));
+}
+
+.fc-feedback-button Label {
+    color: white;
+    font-size: 20px;
+    horizontal-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-overflow: shrink;
+    text-shadow: 0px 0px 5px 3.0 #000000;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+}

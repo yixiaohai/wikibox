@@ -1,0 +1,19 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/layout/custom_game/five_cloud/view/topmenu/index.js" />
+    </scripts>
+    <styles>
+        <include src="file://{resources}/layout/custom_game/five_cloud/view/topmenu/index.css" />
+    </styles>
+    <Panel class="fc-topmenu minimized">
+        <!-- 为了编译图片，编译完可删除 -->
+        <Image src="file://{resources}/layout/custom_game/five_cloud/images/feedback.png" />
+        <Image src="file://{resources}/layout/custom_game/five_cloud/images/mailbox.png" />
+        <Image src="file://{resources}/layout/custom_game/five_cloud/images/toolCommon.png" />
+        <Image src="file://{resources}/layout/custom_game/five_cloud/images/toolDeveloper.png" />
+        <Image src="file://{resources}/layout/custom_game/five_cloud/images/wiki.png" />
+        <Image src="file://{resources}/layout/custom_game/app/images/quickCommands.png" />
+        <Image src="file://{resources}/layout/custom_game/app/images/recreation.png" />
+        <Image src="file://{resources}/layout/custom_game/app/images/toolNativeMap.png" />
+    </Panel>
+</root>

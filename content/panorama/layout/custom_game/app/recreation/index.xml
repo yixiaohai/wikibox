@@ -1,0 +1,51 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/app/recreation/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/app/recreation/index.js" />
+	</scripts>
+	<Panel class="fc-tool minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-tool-head">
+			<Label text="#recreationButton"></Label>
+			<Button
+				onactivate="GameUI.FiveCloudLayer.Close('recreation', 'left')" />
+		</Panel>
+		<Panel class="fc-tool-content">
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#recreationButton" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="HideSkill"
+					onactivate="HideSkill()">
+					<Label text="#HideSkill" />
+				</ToggleButton>
+				<Button class="fc-tool-button blue"
+					onactivate="ShowHideSkillOption()">
+					<Label text="#ShowHideSkillOption" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button blue"
+					onactivate="ShowAddWoodenStake()">
+					<Label text="#AddWoodenStake" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Abilities" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button" id="AddCunstomAbility1"
+					onactivate="AddCustomAbility('dawnbreaker_luminosity_cunstom')">
+					<Label text="#AddCunstomAbility1" />
+				</Button>
+				<Button class="fc-tool-button" id="AddCunstomAbility2"
+					onactivate="AddCustomAbility('ogre_magi_multicast_custom')">
+					<Label text="#AddCunstomAbility2" />
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

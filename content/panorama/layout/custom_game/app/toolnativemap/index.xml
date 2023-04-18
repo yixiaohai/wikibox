@@ -1,0 +1,139 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/app/toolnativemap/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/app/toolnativemap/index.js" />
+	</scripts>
+	<Panel class="fc-tool minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-tool-head">
+			<Label text="#toolNativeMapButton"></Label>
+			<Button
+				onactivate="GameUI.FiveCloudLayer.Close('toolnativemap', 'left')" />
+		</Panel>
+		<Panel class="fc-tool-content">
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Neutralcamp" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="NeutralcampRefreshRange"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('NeutralcampRefreshRange', 'app_event')">
+					<Label text="#NeutralcampRefreshRange" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button green"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_spawn_neutrals '})">
+					<Label text="#DotaSpawnNeutrals" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event', { event: 'KillNeutrals' })">
+					<Label text="#KillNeutrals" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_respawn_roshan '})">
+					<Label text="#DotaRespawnRoshan" />
+				</Button>
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('RoshanUpgradeRate')">
+					<Label text="#RoshanUpgradeRate" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Map" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_dev forcegamestart '})">
+					<Label text="#ForceGameStart" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button green"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_spawn_creeps '})">
+					<Label text="#DotaSpawnCreeps" />
+				</Button>
+				<ToggleButton class="fc-tool-button" id="NoSpawnCreeps"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('NoSpawnCreeps', 'app_event')">
+					<Label text="#NoSpawnCreeps" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button green"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'RegrowTrees'})">
+					<Label text="#RegrowTrees" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'RemoveTrees'})">
+					<Label text="#RemoveTrees" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="WatchTowerHidden"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('WatchTowerHidden', 'app_event')">
+					<Label text="#WatchTowerHidden" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="BuildHidden"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('BuildHidden', 'app_event')">
+					<Label text="#BuildHidden" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="BuildingInvulnerability"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('BuildingInvulnerability', 'app_event')">
+					<Label text="#BuildingInvulnerability" />
+				</ToggleButton>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'BuildingHeal'})">
+					<Label text="#BuildingHeal" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_spawn_rune '})">
+					<Label text="#DotaSpawnRune" />
+				</Button>
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'RemoveWards'})">
+					<Label text="#RemoveWards" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Range" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="TowerDayVisionRange"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('TowerDayVisionRange', 'app_event')">
+					<Label text="#TowerDayVisionRange" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="TowerNightVisionRange"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('TowerNightVisionRange', 'app_event')">
+					<Label text="#TowerNightVisionRange" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="TowerHateRange"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('TowerHateRange', 'app_event')">
+					<Label text="#TowerHateRange" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Other" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button green"
+					onactivate="SaveState()">
+					<Label text="#SaveState" />
+				</Button>
+				<Button class="fc-tool-button red"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'RestoreState'})">
+					<Label text="#RestoreState" />
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

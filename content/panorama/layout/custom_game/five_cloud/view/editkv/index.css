@@ -1,0 +1,92 @@
+.fc-editkv {
+  border: 1px solid #5e6869;
+  background-color: #181818dd;
+  box-shadow: #000000aa 0px 0px 8px 0px;
+  padding: 32px;
+  width: 550px;
+  margin-top: 100px;
+  flow-children: down;
+  vertical-align: top;
+  horizontal-align: center;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;   
+}
+.fc-editkv.minimized {
+  opacity: 0;
+}
+.fc-editkv-title {
+  font-size: 30px;
+  font-weight: thin;
+  color: #fff;
+  horizontal-align: center;
+}
+.fc-editkv-content {
+  horizontal-align: center;
+  flow-children: down;
+  max-height: 500px;
+  margin-top: 10px;
+  width: 100%;
+  overflow: squish scroll;
+}
+
+.fc-editkv-panel {
+  margin-top: 10px;
+  flow-children: right;
+}
+.fc-editkv-key {
+  font-size: 18px;
+  vertical-align: middle;
+  color: #cccccc;
+  width: 250px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.fc-editkv-input {
+  border: 1px solid #373C44;
+  width: 120px;
+  height: 36px;
+  padding: 5px 7px 3px 7px;
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #373C44), to( #222222FF));
+  color: white;
+  font-size: 20px;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.fc-editkv-down {
+  flow-children: right;
+  horizontal-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.fc-editkv-button {
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #222222), to( #4B555D));
+  background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+  background-size: cover;
+  border: 1px solid #83838390;
+  margin: 8px;
+  width: 110px;
+  padding: 10px 30px;
+  transition-property: background-color, wash-color;
+  transition-delay: 0.0s;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+}
+.fc-editkv-button:hover {
+  background-color: gradient( linear, 0% 0%, 0% 100%, from( #58636e), to( #53626e));
+}
+.fc-editkv-button Label {
+  color: white;
+  font-size: 20px;
+  horizontal-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-overflow: shrink;
+  text-shadow: 0px 0px 5px 3.0 #000000;
+  font-weight: semi-bold;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,18 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/entkv/index.js" />
+	</scripts>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/entkv/index.css" />
+	</styles>
+
+	<Panel class="fc-info fc-kv minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-info-head">
+			<Label text="#EntKV"></Label>
+			<Button acceptsjoyfocus="true" onactivate="Close()" />
+		</Panel>
+		<Panel class="fc-info-body" id="EntKVContet"></Panel>
+	</Panel>
+</root>

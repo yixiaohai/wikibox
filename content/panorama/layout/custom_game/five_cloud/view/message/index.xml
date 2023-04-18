@@ -1,0 +1,11 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/message/index.js" />
+	</scripts>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/message/index.css" />
+	</styles>
+	<Panel class="fc-message" >
+		
+	</Panel>
+</root>

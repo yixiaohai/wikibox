@@ -1,0 +1,53 @@
+.woodenstake {
+    transform: translateX( 0%) translateY( -100px);
+    vertical-align: middle;
+    horizontal-align: center;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: 0.35s;
+    transition-timing-function: ease-in-out;
+    width: 806px;
+    border: 1px solid #5e6869;
+    background-color: #181818dd;
+    box-shadow: #000000aa 0px 0px 8px 0px;
+    flow-children: down;
+}
+.woodenstake.minimized {
+    opacity: 0;
+    transform: translateX( 0) translateY( -150px);
+}
+.AddWoodenStakeDialogTitlePanel {
+    width: 100%;
+    border-bottom: 1px solid #5e6869;   
+}
+.AddWoodenStakeDialogTitlePanel Label {
+    font-size: 18px;
+    color: #666666;
+    margin: 10px;
+}
+.AddWoodenStakeDialogContainer {
+    padding: 5px 0;
+    flow-children: down;
+}
+.AddWoodenStakeDialogRow {
+    flow-children: right;
+    padding: 0 5px;
+}
+.AddWoodenStakeDialogHero {
+    flow-children: right;
+    width: 100%;
+    margin: 5px;
+    border: 1px solid #5e6869;
+    width: fill-parent-flow( 1.0);
+}
+.AddWoodenStakeDialogHero.active {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #58636e), to( #53626e));
+    border: 1px solid #bbfbff;
+}
+.AddWoodenStakeDialogHeroImage {
+    width: 96px;
+    height: 54px; 
+}
+.AddWoodenStakeDialogHeroLabel {
+    padding: 6px;
+}

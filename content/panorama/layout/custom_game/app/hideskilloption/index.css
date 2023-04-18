@@ -1,0 +1,98 @@
+.hideskilloption {
+    transform: translateX( 0%) translateY( -100px);
+    vertical-align: middle;
+    horizontal-align: center;
+    opacity: 1;
+    transition-property: opacity, transform;
+    transition-duration: 0.35s;
+    transition-timing-function: ease-in-out;
+    width: 806px;
+    border: 1px solid #5e6869;
+    background-color: #181818dd;
+    box-shadow: #000000aa 0px 0px 8px 0px;
+    flow-children: down;
+}
+
+.hideskilloption.minimized {
+    opacity: 0;
+    transform: translateX( 0) translateY( -150px);
+}
+
+.HideSkillOptionTitlePanel {
+    width: 100%;
+
+    border-bottom: 1px solid #5e6869;
+}
+
+.HideSkillOptionTitlePanel Label {
+    font-size: 18px;
+    color: #666666;
+    margin: 10px;
+}
+
+.HideSkillHeroList {
+    padding: 6px;
+    flow-children: down;
+    overflow: squish scroll;
+    width: 100%; 
+}
+
+.HideSkillHeroCategory {
+    flow-children: right-wrap;
+}
+
+.SelectHeroCategoryImgPanel {
+    padding: 2px;
+}
+
+.SelectHeroCategoryImg {
+    width: 74px;
+    height: 40px;
+    border: 1px solid black;
+    saturation: 0;
+    opacity: 1;
+    transition-property: border, saturation;
+    transition-duration: 0.2s;
+}
+
+.SelectHeroCategoryImg.active {
+    saturation: 1;
+}
+
+.HideSkillOptionButtonRow {
+    flow-children: right;
+    horizontal-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.HideSkillOptionButton {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #222222), to( #4B555D));
+    background-image: url("s2r://panorama/images/backgrounds/background_play_button_2x_png.vtex");
+    background-size: cover;
+    border: 1px solid #83838390;
+    margin: 8px;
+    width: 110px;
+    padding: 5px 10px;
+    transition-property: background-color, wash-color;
+    transition-delay: 0.0s;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+
+.HideSkillOptionButton:hover {
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #58636e), to( #53626e));
+}
+
+.HideSkillOptionButton Label {
+    color: white;
+    font-size: 20px;
+    horizontal-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-overflow: shrink;
+    text-shadow: 0px 0px 5px 3.0 #000000;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    font-family: 'Courier New', Courier, monospace;
+}

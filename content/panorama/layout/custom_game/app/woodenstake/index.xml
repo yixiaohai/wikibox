@@ -1,0 +1,103 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/app/woodenstake/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/app/woodenstake/index.js" />
+	</scripts>
+	<snippets>
+		<snippet name="SelectHeroCategoryImgPanel">
+			<Panel class="SelectHeroCategoryImgPanel">
+				<DOTAHeroImage class="SelectHeroCategoryImg active"></DOTAHeroImage>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="woodenstake minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="AddWoodenStakeDialogTitlePanel">
+			<Label text="#AddWoodenStake"></Label>
+		</Panel>
+		<Panel class="AddWoodenStakeDialogContainer">
+			<Panel class="AddWoodenStakeDialogRow">
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)" onactivate="AddWoodenStakeOther(1)">
+					<DOTAHeroImage heroname="npc_dota_hero_ursa" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_ursa" class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)" onactivate="AddWoodenStakeOther(2)">
+					<DOTAHeroImage heroname="npc_dota_hero_skeleton_king" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_skeleton_king"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+			</Panel>
+			<Panel class="AddWoodenStakeDialogRow">
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('juggernaut', 'juggernaut_blade_fury')">
+					<DOTAHeroImage heroname="npc_dota_hero_juggernaut" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_juggernaut"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('puck', 'puck_phase_shift')">
+					<DOTAHeroImage heroname="npc_dota_hero_puck" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_puck" class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+			</Panel>
+			<Panel class="AddWoodenStakeDialogRow">
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('morphling', 'morphling_waveform')">
+					<DOTAHeroImage heroname="npc_dota_hero_morphling" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_morphling"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('queenofpain', 'queenofpain_blink')">
+					<DOTAHeroImage heroname="npc_dota_hero_queenofpain" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_queenofpain"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+			</Panel>
+			<Panel class="AddWoodenStakeDialogRow">
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('storm_spirit', 'storm_spirit_ball_lightning')">
+					<DOTAHeroImage heroname="npc_dota_hero_storm_spirit" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_storm_spirit"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('antimage', 'antimage_blink')">
+					<DOTAHeroImage heroname="npc_dota_hero_antimage" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_antimage"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+			</Panel>
+			<Panel class="AddWoodenStakeDialogRow">
+				<Panel class="AddWoodenStakeDialogHero" onmouseover="AddStyle( active )"
+					onmouseout="RemoveStyle(active)"
+					onactivate="AddWoodenStake('faceless_void', 'faceless_void_time_walk')">
+					<DOTAHeroImage heroname="npc_dota_hero_faceless_void" heroimagestyle="landscape"
+						class="AddWoodenStakeDialogHeroImage" />
+					<Label text="#AddWoodenStakeLabel_faceless_void"
+						class="AddWoodenStakeDialogHeroLabel" />
+				</Panel>
+			</Panel>
+
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,101 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"dawnbreaker_luminosity_cunstom"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"app/abilities/dawnbreaker_luminosity_cunstom"
+		"AbilityTextureName"			"dawnbreaker_luminosity"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal_radius"				"650"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal_pct"					"35 40 45 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"125 150 175 200"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_count"				"3"
+				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_attack_count"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"				  
+			}	
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"proc_cooldown"				"0.00"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal_from_creeps"			"50"
+			}	
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"allied_healing_pct"		"50"
+			}				
+		
+		}
+	}
+
+	"ogre_magi_multicast_custom"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"app/abilities/ogre_magi_multicast_custom"
+		"AbilityTextureName"			"ogre_magi_multicast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_2_times"		"75 75 75"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_3_times"		"0 30 30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_4_times"		"0 0 15"
+			}
+		}
+	}
+
+}

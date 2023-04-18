@@ -1,0 +1,92 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/app/hideskilloption/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/app/hideskilloption/index.js" />
+	</scripts>
+	<snippets>
+		<snippet name="SelectHeroCategoryImgPanel">
+			<Panel class="SelectHeroCategoryImgPanel">
+				<DOTAHeroImage class="SelectHeroCategoryImg active"></DOTAHeroImage>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="hideskilloption minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="HideSkillOptionTitlePanel">
+			<Label text="#ShowHideSkillOption"></Label>
+		</Panel>
+		<Panel class="fc-tool-row">
+			<Label class="fc-tool-row-title" text="#Hero" />
+		</Panel>
+		<Panel class="HideSkillHeroList">
+			<Panel class="HideSkillHeroCategory" id="HideSkillHeroCategory"></Panel>
+		</Panel>
+		<Panel class="fc-tool-row">
+			<Button class="fc-tool-button" acceptsjoyfocus="true" onactivate="SelectHeroCategoryImgSelectAll()">
+				<Label text="#SelectAll" />
+			</Button>
+			<Button class="fc-tool-button" acceptsjoyfocus="true" onactivate="SelectHeroCategoryImgSelectBack()">
+				<Label text="#ReverseSelection" />
+			</Button>
+		</Panel>
+		<Panel class="fc-tool-row">
+			<Label class="fc-tool-row-title" text="#IsInvisible" />
+		</Panel>
+		<Panel class="fc-tool-row" id="invis">
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="invis" tabindex="0">
+				<Label text="#True" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="invis" tabindex="1">
+				<Label text="#False" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="invis" tabindex="2">
+				<Label text="#Random" />
+			</RadioButton>
+		</Panel>
+		<Panel class="fc-tool-row">
+			<Label class="fc-tool-row-title" text="#ItemBlinkType" />
+		</Panel>
+		<Panel class="fc-tool-row" id="blink">
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="blink" tabindex="0">
+				<Label text="#Normal" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="blink" tabindex="1">
+				<Label text="#ArcaneBlink" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="blink" tabindex="2">
+				<Label text="#Random" />
+			</RadioButton>
+		</Panel>
+		<Panel class="fc-tool-row">
+			<Label class="fc-tool-row-title" text="#RefreshFrequency" />
+		</Panel>
+		<Panel class="fc-tool-row" id="delay">
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="delay" tabindex="0">
+				<Label text="#Faster" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="delay" tabindex="1">
+				<Label text="#Normal" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="delay" tabindex="2">
+				<Label text="#Slower" />
+			</RadioButton>
+			<RadioButton class="fc-tool-button" acceptsjoyfocus="true" group="delay" tabindex="3">
+				<Label text="#Random" />
+			</RadioButton>
+		</Panel>
+		<Panel class="HideSkillOptionButtonRow">
+			<Button class="HideSkillOptionButton" onactivate="HideSkillOptionOk()">
+				<Label text="#Submit" />
+			</Button>
+			<Button class="HideSkillOptionButton" onactivate="HideSkillOptionReset()">
+				<Label text="#Default" />
+			</Button>
+			<Button class="HideSkillOptionButton" onactivate="HideSkillOptionCancel()">
+				<Label text="#Cancel" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

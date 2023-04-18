@@ -1,0 +1,214 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/entinfo/index.js" />
+	</scripts>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/entinfo/index.css" />
+	</styles>
+	<snippets>
+		<snippet name="ability">
+			<Panel>
+				<DOTAAbilityImage class="fc-info-ability-image" />
+				<Panel class="fc-info-ability-button red">
+					<Label text="#Edit"></Label>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="fc-info minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-info-head">
+			<Label text="#Entinfo"></Label>
+			<Button acceptsjoyfocus="true" onactivate="Close()" />
+		</Panel>
+		<Panel class="fc-info-body">
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#entId"></Label>
+					<Label class="fc-info-cow-right" text="-" id="entId"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetUnitName"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetUnitName"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetClassname"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetClassname"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAbsOrigin"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAbsOrigin"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetDayTimeVisionRange"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetDayTimeVisionRange"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetNightTimeVisionRange"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetNightTimeVisionRange"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAngles"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAngles"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#CanBeSeenByAnyOpposingTeam"></Label>
+					<Label class="fc-info-cowRight" text="-" id="CanBeSeenByAnyOpposingTeam"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetBaseAttackTime"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetBaseAttackTime"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAttackSpeed"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAttackSpeed"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAttacksPerSecond"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAttacksPerSecond"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetSecondsPerAttack"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetSecondsPerAttack"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAttackAnimationPoint"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAttackAnimationPoint"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetCastPoint"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetCastPoint"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#HasFlyingVision"></Label>
+					<Label class="fc-info-cowRight" text="-" id="HasFlyingVision"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetProjectileSpeed"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetProjectileSpeed"></Label>
+				</Panel>
+			</Panel>
+
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetPaddedCollisionRadius"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetPaddedCollisionRadius"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetHullRadius"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetHullRadius"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetIdealSpeed"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetIdealSpeed"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetCooldownReduction"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetCooldownReduction"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetBaseDamage"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetBaseDamage"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAverageTrueAttackDamage"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAverageTrueAttackDamage"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetAttackRangeBuffer"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetAttackRangeBuffer"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#Script_GetAttackRange"></Label>
+					<Label class="fc-info-cowRight" text="-" id="Script_GetAttackRange"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetMagicalArmorValue"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetMagicalArmorValue"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetPhysicalArmorValue"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetPhysicalArmorValue"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetStatusResistance"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetStatusResistance"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetEvasion"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetEvasion"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetSpellAmplification"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetSpellAmplification"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetCastRangeBonus"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetCastRangeBonus"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#Health"></Label>
+					<Label class="fc-info-cowRight" text="-" id="Health"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#Mana"></Label>
+					<Label class="fc-info-cowRight" text="-" id="Mana"></Label>
+				</Panel>
+			</Panel>
+			<Panel class="fc-info-row">
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetDeathXP"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetDeathXP"></Label>
+				</Panel>
+				<Panel class="fc-info-cow">
+					<Label class="fc-info-cow-left" text="#GetGoldBounty"></Label>
+					<Label class="fc-info-cowRight" text="-" id="GetGoldBounty"></Label>
+				</Panel>
+			</Panel>
+
+			<Panel class="fc-info-abilities" id="Abilities"></Panel>
+
+			<Panel class="modifers">
+				<Panel class="fc-info-row">
+					<Label class="modifers-title" id="Modifiers" text="Modifiers"></Label>
+				</Panel>
+				<Panel class="modifers_list" id="BuffList">
+				</Panel>
+			</Panel>
+
+		</Panel>
+	</Panel>
+</root>

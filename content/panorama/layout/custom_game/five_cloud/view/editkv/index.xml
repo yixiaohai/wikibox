@@ -1,0 +1,31 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/editkv/index.js" />
+	</scripts>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/editkv/index.css" />
+	</styles>
+	<snippets>
+		<snippet name="kvinput">
+			<Panel class="fc-editkv-panel">
+				<Label class="fc-editkv-key" text="-" />
+				<TextEntry class="fc-editkv-input" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="fc-editkv minimized">
+		<Label id="Title" class="fc-editkv-title" text="-" />
+		<Panel class="fc-editkv-content" id="EditKVContent">
+		</Panel>
+		<Panel class="fc-editkv-down">
+			<Button class="fc-editkv-button" onactivate="Ok()">
+				<Label text="#Ok" />
+			</Button>
+			<Button class="fc-editkv-button" onactivate="Close()">
+				<Label text="#Cancel" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

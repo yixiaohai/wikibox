@@ -1,0 +1,48 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/main/index.css" />
+		<include src="file://{resources}/layout/custom_game/app/quickcommands/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/app/quickcommands/index.js" />
+	</scripts>
+	<Panel class="fc-tool minimized" ondescendantfocus="DropInputFocus()">
+		<Panel class="fc-tool-head">
+			<Label text="#quickCommandsButton"></Label>
+			<Button
+				onactivate="GameUI.FiveCloudLayer.Close('quickcommands', 'left')" />
+		</Panel>
+		<Panel class="fc-tool-content">
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Hero" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="SelectionGroups"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('SelectionGroups', 'app_event')">
+					<Label text="#SelectionGroups" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="SmartMultiunitCast"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('SmartMultiunitCast', 'app_event')">
+					<Label text="#SmartMultiunitCast" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="MinimapDisableRightclick"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('MinimapDisableRightclick', 'app_event')">
+					<Label text="#MinimapDisableRightclick" />
+				</ToggleButton>
+				<Button class="fc-tool-button blue"
+					onactivate="GameUI.FiveCloudDialog.Open('MinimapMisclickTime')">
+					<Label text="#MinimapMisclickTime" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'SendToServerConsole' , command: 'dota_taunt_second_cooldown -60 '})">
+					<Label text="#TauntNoCD" />
+				</Button>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

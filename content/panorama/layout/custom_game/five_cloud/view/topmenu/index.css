@@ -1,0 +1,85 @@
+.fc-topmenu {
+  width: 450px;
+  height: 30px;
+  margin-top: 13px;
+  horizontal-align: left;
+  vertical-align: top;
+  margin-left: 140px;
+  flow-children: right;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.35s;
+  transition-timing-function: ease-in-out;
+}
+
+.fc-topmenu.minimized {
+  opacity: 0;
+}
+
+.fc-topmenu-buttonbox {
+  width: 30px;
+  height: 30px;
+  margin-left: 18px;
+  flow-children: right;
+}
+
+.fc-topmenu-buttonbox.minimized {
+  width: 0;
+}
+
+.fc-topmenu-buttonbox Image{
+  vertical-align: middle;
+  horizontal-align: center;
+  tooltip-position: bottom;
+  tooltip-body-position: 50% 50%;
+  wash-color: #CDF;
+  opacity: 0.5;
+  transition-property: opacity;
+  transition-duration: 0.2s;
+  img-shadow: 0px 0px 3px 3 black;
+}
+
+.fc-topmenu-buttonbox Image:hover {
+  opacity: 1;
+  wash-color: #fff;
+}
+
+.CombatLogButton {
+  width: 26px;
+  height: 26px;
+}
+
+.toolCommonButton {
+  width: 24px;
+  height: 24px;
+}
+
+.toolNativeMapButton {
+  width: 30px;
+  height: 30px;
+}
+
+.quickCommandsButton {
+  width: 24px;
+  height: 24px;
+}
+
+.toolDeveloperButton {
+  width: 28px;
+  height: 28px;
+}
+
+.feedbackButton {
+  width: 30px;
+  height: 30px;
+}
+
+.mailboxButton {
+  width: 30px;
+  height: 30px;
+}
+
+.wikiButton {
+  width: 30px;
+  height: 30px;
+}

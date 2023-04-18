@@ -1,0 +1,41 @@
+
+.fc-kv {
+  width: 850px;
+}
+
+.fc-info-kv-object {
+  width: 95%;
+  border: 1px solid #bbfbff;
+  flow-children: down;
+  horizontal-align: middle;
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.fc-info-kv-cow {
+  width: 100%;
+  font-size: 18px;
+  flow-children: right;
+  padding: 5px;
+}
+
+.fc-info-kv-cow-center {
+  width: 100%;
+  text-align: center;
+  color: gradient( linear, 0% 0%, 100% 0%, from( #c0f8ff), color-stop(0.5, #bbfbff), to( #c0f8ff));
+  text-shadow: 0px 0px 16px 1.0 #3bb3ff22;
+  margin: 10px;
+}
+
+.fc-info-kv-cow-left {
+  width: 270px;
+  margin-right: 20px;
+  text-align: right;
+  color: gradient( linear, 0% 0%, 100% 0%, from( #c0f8ff), color-stop(0.5, #bbfbff), to( #c0f8ff));
+  text-shadow: 0px 0px 16px 1.0 #3bb3ff22;
+}
+
+.fc-info-kv-cow-right {
+  color: #aaa;
+}

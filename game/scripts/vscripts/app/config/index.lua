@@ -1,0 +1,1 @@
+require("app.config.game_config")

@@ -1,0 +1,26 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/feedback/index.js" />
+	</scripts>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/feedback/index.css" />
+	</styles>
+	<Panel class="fc-feedback minimized">
+		<Label class="fc-feedback-title" text="#feedbackTitle" />
+		<Panel class="fc-feedback-content">
+			<TextEntry id="feedbackInput" class="fc-feedback-input" multiline="true"
+				oncancel="Close()" />
+		</Panel>
+		<Panel class="fc-feedback-button-box">
+			<Button class="fc-feedback-button" onactivate="Ok()">
+				<Label text="#Submit" />
+			</Button>
+			<Button class="fc-feedback-button" onactivate="Reset()">
+				<Label text="#Reset" />
+			</Button>
+			<Button class="fc-feedback-button" onactivate="Close()">
+				<Label text="#Cancel" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,29 @@
+<root>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/mailbox/index.js" />
+	</scripts>
+	<styles>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/mailbox/index.css" />
+	</styles>
+	<snippets>
+		<snippet name="mail">
+			<Panel class="fc-mailbox-mail">
+				<Label class="fc-mailbox-mail-title" text="-"/>
+				<Label class="fc-mailbox-mail-excerpt" text="-"/>
+				<Label class="fc-mailbox-mail-read" text="-"/>
+				<Label class="fc-mailbox-mail-date" text="-"/>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="fc-mailbox minimized">
+		<Panel class="fc-mailbox-left" id="MailList">
+		
+		</Panel>
+		<Panel class="fc-mailbox-right">
+			<Label class="fc-mailbox-mail-content" id="MailContent" text="-" />
+			<Button class="fc-mailbox-button minimized" id="DeleteButton" onactivate="Delete()">
+				<Label text="#Delete" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

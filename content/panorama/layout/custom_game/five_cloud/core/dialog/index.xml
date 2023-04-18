@@ -1,0 +1,26 @@
+<root>
+    <styles>
+        <include src="file://{resources}/layout/custom_game/five_cloud/core/dialog/index.css" />
+    </styles>
+    <Panel class="fc-dialog minimized" hittest="false" >
+        <Label id="Title" class="fc-dialog-title" text="-" />
+        <Panel class="fc-dialog-content">
+            <Panel class="fc-dialog-error">
+                <Label id="Error" text="-"/>
+            </Panel>
+            <TextEntry id="Input" class="fc-dialog-input" />
+            <Label id="Describe" class="fc-dialog-describe" text="-"/>
+        </Panel>
+        <Panel class="fc-dialog-down">
+            <Button class="fc-dialog-button" id="Ok">
+                <Label text="#Ok" />
+            </Button>
+            <Button class="fc-dialog-button" id="Reset">
+                <Label text="#Reset" />
+            </Button>
+            <Button class="fc-dialog-button" id="Cancel" >
+                <Label text="#Cancel" />
+            </Button>
+        </Panel>
+    </Panel>
+</root>

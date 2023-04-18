@@ -1,0 +1,32 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/heropick/index.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/layout/custom_game/five_cloud/view/heropick/index.js" />
+	</scripts>
+	<snippets>
+		<snippet name="AbilityAddContainer">
+			<Button>
+				<DOTAAbilityImage class="fc-ability-img" />
+				<Panel class="fc-ability-button green">
+					<Label text="#Add"></Label>
+				</Panel>
+			</Button>
+		</snippet>
+		<snippet name="AbilityExistingContainer">
+			<Button>
+				<DOTAAbilityImage class="fc-ability-img" />
+				<Panel class="fc-ability-button red">
+					<Label text="#Remove"></Label>
+				</Panel>
+			</Button>
+		</snippet>
+	</snippets>
+	<Panel class="fc-heropick minimized">
+		<DOTAUIHeroPicker id="HeroPicker" />
+		<Panel class="fc-ability-add" id="AbilityAdd"></Panel>
+		<Panel class="fc-ability-existing" id="AbilityExisting"></Panel>
+	</Panel>
+</root>
