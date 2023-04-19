@@ -112,7 +112,7 @@ const schinese = {
     // ent kv
     "EntKV": "实体KV",
     // edit kv
-    "AbilityCastPoint": "施法点：",
+    "AbilityCastPoint": "施法前摇：",
     "AbilityChannelTime": "吟唱时间：",
     "AbilityManaCost": "魔法消耗：",
     "AbilityCastRange": "施法距离：",
@@ -129,6 +129,7 @@ const schinese = {
     "EntNotIsAlive": "死亡实体",
     "Particle": "特效",
     "EntError" : "需要先点击实体概览统计实体",
+    "ConfigAndStatus" : "当前配置状态",
     // recreation
     "feedbackTitle": "您如果对本地图有任何的意见和建议，都可以发送给我们，以便我们不断改进游戏体验。",
 

@@ -77,3 +77,30 @@ function AppEvent:TowerHateRange(e)
         data = e.checked
     })
 end
+
+-- 显示边界体积
+function AppEvent:ShowBoundingRadius(e)
+    if GameRules:IsCheatMode() then
+        SendToServerConsole("dota_unit_show_bounding_radius " .. e.checked)
+        CustomGameEventManager:Send_ServerToAllClients("UpdateServerStatus", {
+            name = "ShowBoundingRadius",
+            data = e.checked
+        })
+    else
+        FiveCloudSDK:Message("#NotIsCheatMode", e.playerid, "error")
+    end
+
+end
+
+-- 显示选择体积
+function AppEvent:ShowSelectionBoxes(e)
+    if GameRules:IsCheatMode() then
+        SendToServerConsole("dota_unit_show_selection_boxes " .. e.checked)
+        CustomGameEventManager:Send_ServerToAllClients("UpdateServerStatus", {
+            name = "ShowSelectionBoxes",
+            data = e.checked
+        })
+    else
+        FiveCloudSDK:Message("#NotIsCheatMode", e.playerid, "error")
+    end
+end

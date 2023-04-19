@@ -179,7 +179,7 @@ let EntKVButton = () => {
         describe: '#ShowRangeDescribe',
         ok_function: function () {
             let v = Number(this.GetInput())
-            GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'SendToServerConsole', command: 'dota_range_display ' + v })
+            GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event', { event: 'ShowRangeDialog', v: v })
         }
     })
 

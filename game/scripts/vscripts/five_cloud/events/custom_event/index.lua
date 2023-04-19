@@ -6,6 +6,7 @@ if not FiveCloudCustomEvent then
     FiveCloudCustomEvent.heroListById = {}
     FiveCloudCustomEvent.heroListByName = {}
     FiveCloudCustomEvent.unitListByName = {}
+    FiveCloudCustomEvent.ShowRangeDialogList = {}
 end
 
 require("five_cloud.events.custom_event.hero")

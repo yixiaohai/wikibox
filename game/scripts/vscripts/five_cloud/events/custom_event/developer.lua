@@ -113,3 +113,15 @@ function FiveCloudCustomEvent:ClParticleLogCreates(e)
     end
     FiveCloudCustomEvent:SendToServerConsole(data)
 end
+
+function FiveCloudCustomEvent:ConfigAndStatus(e)
+    local str = ""
+    str = str .. " isCloudMode:".. tostring(FiveCloudConfig["isCloudMode"])
+    str = str .. " isDebugMode:".. tostring(FiveCloudConfig["isDebugMode"])
+    str = str .. " isTestMap:".. tostring(FiveCloudConfig["isTestMap"])
+    str = str .. " IsDedicatedServer:".. tostring(FiveCloudConfig["IsDedicatedServer"])
+    str = str .. " sv_cheats:".. tostring(Convars:GetBool("sv_cheats"))
+    
+    FiveCloudSDK:Message(str, e.playerid, "info")
+    FiveCloudSDK:Print(str)
+end

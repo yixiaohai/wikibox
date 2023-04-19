@@ -32,6 +32,7 @@ end
 
 -- 发送控制台命令
 function FiveCloudCustomEvent:SendToServerConsole(e)
+    FiveCloudSDK:Print(e,'SendToServerConsole')
     if GameRules:IsCheatMode() then
         SendToServerConsole(e.command)
     else

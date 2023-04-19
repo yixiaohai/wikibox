@@ -254,15 +254,12 @@
 				</Button>
 			</Panel>
 			<Panel class="fc-tool-row">
-				<ToggleButton class="fc-tool-button" id="ShowBoundingRadius"
-					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowBoundingRadius')">
-					<Label text="#ShowBoundingRadius" />
-				</ToggleButton>
-				<ToggleButton class="fc-tool-button" id="ShowSelectionBoxes"
-					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowSelectionBoxes')">
-					<Label text="#ShowSelectionBoxes" />
-				</ToggleButton>
+				<Label class="fc-tool-row-title" text="#Other" />
 			</Panel>
+			<Button class="fc-tool-button"
+				onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_custom_event',{ event: 'ConfigAndStatus' })">
+				<Label text="#ConfigAndStatus" />
+			</Button>
 		</Panel>
 	</Panel>
 </root>

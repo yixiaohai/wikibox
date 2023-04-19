@@ -43,6 +43,19 @@
 					<Label text="#TauntNoCD" />
 				</Button>
 			</Panel>
+			<Panel class="fc-tool-row">
+				<Label class="fc-tool-row-title" text="#Range" />
+			</Panel>
+			<Panel class="fc-tool-row">
+				<ToggleButton class="fc-tool-button" id="ShowBoundingRadius"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowBoundingRadius', 'app_event')">
+					<Label text="#ShowBoundingRadius" />
+				</ToggleButton>
+				<ToggleButton class="fc-tool-button" id="ShowSelectionBoxes"
+					onactivate="GameUI.FiveCloudToggleButton.SendToggleEvent('ShowSelectionBoxes', 'app_event')">
+					<Label text="#ShowSelectionBoxes" />
+				</ToggleButton>
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

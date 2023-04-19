@@ -129,6 +129,7 @@ const english = {
     "EntNotIsAlive": "Entity Not IsAlive",
     "Particle": "Particle",
     "EntError": "You need to first click on Entity Overview to count entities",
+    "ConfigAndStatus" : "Config and status",
     // recreation
     "feedbackTitle": "If you have any comments or suggestions about this map, you can send them to us so that we can continuously improve the gaming experience.",
 
