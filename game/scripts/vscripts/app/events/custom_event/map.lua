@@ -182,171 +182,171 @@ function AppEvent:RemoveWards(e)
 end
 
 function AppEvent:SaveState(e)
-    if not FiveCloudConfig["isCloudMode"] then
-        FiveCloudSDK:Message("#NotIsCloudMode", e.playerid)
-        return
-    end
-    local uploadData = ""
+    if FiveCloudConfig["isCloudMode"] and FiveCloudConfig["IsDedicatedServer"] then
+        local uploadData = ""
 
-    uploadData = uploadData .. e.data.EasyBuy
-    uploadData = uploadData .. e.data.FreeSpells
-    uploadData = uploadData .. e.data.HeroFastRespawn
-    uploadData = uploadData .. e.data.HeroSituRespawn
-    uploadData = uploadData .. e.data.PassiveGold
-    uploadData = uploadData .. e.data.NoFogOfWar
-    uploadData = uploadData .. e.data.NoSpawnCreeps
-    uploadData = uploadData .. e.data.WatchTowerHidden
-    uploadData = uploadData .. e.data.BuildHidden
-    uploadData = uploadData .. e.data.BuildingInvulnerability
-    uploadData = uploadData .. "|"
+        uploadData = uploadData .. e.data.EasyBuy
+        uploadData = uploadData .. e.data.FreeSpells
+        uploadData = uploadData .. e.data.HeroFastRespawn
+        uploadData = uploadData .. e.data.HeroSituRespawn
+        uploadData = uploadData .. e.data.PassiveGold
+        uploadData = uploadData .. e.data.NoFogOfWar
+        uploadData = uploadData .. e.data.NoSpawnCreeps
+        uploadData = uploadData .. e.data.WatchTowerHidden
+        uploadData = uploadData .. e.data.BuildHidden
+        uploadData = uploadData .. e.data.BuildingInvulnerability
+        uploadData = uploadData .. "|"
 
-    local hero = PlayerResource:GetPlayer(e.playerid):GetAssignedHero()
-    local wards = Entities:FindAllByClassname("npc_dota_ward_base")
-    local sentries = Entities:FindAllByClassname("npc_dota_ward_base_truesight")
-    local dummys = Entities:FindAllByClassname("npc_dota_hero_target_dummy")
+        local hero = PlayerResource:GetPlayer(e.playerid):GetAssignedHero()
+        local wards = Entities:FindAllByClassname("npc_dota_ward_base")
+        local sentries = Entities:FindAllByClassname("npc_dota_ward_base_truesight")
+        local dummys = Entities:FindAllByClassname("npc_dota_hero_target_dummy")
 
-    local data_wards = "{"
-    if wards then
-        for k, ent in pairs(wards) do
-            local modifier = ent:FindModifierByName("modifier_item_buff_ward")
-            if modifier then
-                data_wards = data_wards .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
-                                 ent:GetOrigin().z .. ","
-                data_wards = data_wards .. ent:GetTeam() .. ","
-                data_wards = data_wards .. ent:FindModifierByName("modifier_item_buff_ward"):GetDuration() .. "},"
+        local data_wards = "{"
+        if wards then
+            for k, ent in pairs(wards) do
+                local modifier = ent:FindModifierByName("modifier_item_buff_ward")
+                if modifier then
+                    data_wards = data_wards .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
+                                     ent:GetOrigin().z .. ","
+                    data_wards = data_wards .. ent:GetTeam() .. ","
+                    data_wards = data_wards .. ent:FindModifierByName("modifier_item_buff_ward"):GetDuration() .. "},"
+                end
             end
         end
-    end
-    data_wards = data_wards .. "}|"
-    uploadData = uploadData .. data_wards
+        data_wards = data_wards .. "}|"
+        uploadData = uploadData .. data_wards
 
-    local data_sentries = "{"
-    if sentries then
-        for k, ent in pairs(sentries) do
-            local modifier = ent:FindModifierByName("modifier_item_buff_ward")
-            if modifier then
-                data_sentries = data_sentries .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
-                                    ent:GetOrigin().z .. ","
-                data_sentries = data_sentries .. ent:GetTeam() .. ","
-                data_sentries = data_sentries .. ent:FindModifierByName("modifier_item_buff_ward"):GetDuration() .. "},"
+        local data_sentries = "{"
+        if sentries then
+            for k, ent in pairs(sentries) do
+                local modifier = ent:FindModifierByName("modifier_item_buff_ward")
+                if modifier then
+                    data_sentries = data_sentries .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
+                                        ent:GetOrigin().z .. ","
+                    data_sentries = data_sentries .. ent:GetTeam() .. ","
+                    data_sentries = data_sentries .. ent:FindModifierByName("modifier_item_buff_ward"):GetDuration() ..
+                                        "},"
+                end
             end
         end
-    end
-    data_sentries = data_sentries .. "}|"
-    uploadData = uploadData .. data_sentries
+        data_sentries = data_sentries .. "}|"
+        uploadData = uploadData .. data_sentries
 
-    local data_dummys = "{"
-    if dummys then
-        for k, ent in pairs(dummys) do
-            data_dummys = data_dummys .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
-                              ent:GetOrigin().z .. "},"
-        end
-    end
-    data_dummys = data_dummys .. "}|"
-    uploadData = uploadData .. data_dummys
-
-    uploadData = uploadData .. "{" .. hero:GetOrigin().x .. "," .. hero:GetOrigin().y .. "," .. hero:GetOrigin().z ..
-                     "}"
-
-    FiveCloudSDK:HttpPostWithSign("/dota2/map/SaveState", e.playerid, {
-        Content = uploadData
-    }, function(res)
-        if res then
-            if res.code == 200 then
-                FiveCloudSDK:Message("#SaveStateOK", e.playerid)
+        local data_dummys = "{"
+        if dummys then
+            for k, ent in pairs(dummys) do
+                data_dummys = data_dummys .. "{" .. ent:GetOrigin().x .. "," .. ent:GetOrigin().y .. "," ..
+                                  ent:GetOrigin().z .. "},"
             end
         end
-    end)
+        data_dummys = data_dummys .. "}|"
+        uploadData = uploadData .. data_dummys
 
+        uploadData =
+            uploadData .. "{" .. hero:GetOrigin().x .. "," .. hero:GetOrigin().y .. "," .. hero:GetOrigin().z .. "}"
+
+        FiveCloudSDK:HttpPostWithSign("/dota2/map/SaveState", e.playerid, {
+            Content = uploadData
+        }, function(res)
+            if res then
+                if res.code == 200 then
+                    FiveCloudSDK:Message("#SaveStateOK", e.playerid)
+                end
+            end
+        end)
+    else
+        FiveCloudSDK:Message("#NotIsCloudMode", e.playerid, "error")
+    end
 end
 
 function AppEvent:RestoreState(e)
-    if not FiveCloudConfig["isCloudMode"] then
-        FiveCloudSDK:Message("#NotIsCloudMode", e.playerid)
-        return
-    end
-    local func = function(res)
-        if res then
-            if res.code == 200 then
-                local hero = PlayerResource:GetPlayer(e.playerid):GetAssignedHero()
-                local content = res.data.content
-                local arr = FiveCloudSDK:Split(content, "|")
-                local togglebutton = arr[1]
-                local wards = json.decode(arr[2])
-                local sentries = json.decode(arr[3])
-                local dummys = json.decode(arr[4])
-                local heroinfo = json.decode(arr[5])
+    if FiveCloudConfig["isCloudMode"] and FiveCloudConfig["IsDedicatedServer"] then
+        local func = function(res)
+            if res then
+                if res.code == 200 then
+                    local hero = PlayerResource:GetPlayer(e.playerid):GetAssignedHero()
+                    local content = res.data.content
+                    local arr = FiveCloudSDK:Split(content, "|")
+                    local togglebutton = arr[1]
+                    local wards = json.decode(arr[2])
+                    local sentries = json.decode(arr[3])
+                    local dummys = json.decode(arr[4])
+                    local heroinfo = json.decode(arr[5])
 
-                local EasyBuy = tonumber(string.sub(togglebutton, 1, 1))
-                local FreeSpells = tonumber(string.sub(togglebutton, 2, 2))
-                local HeroFastRespawn = tonumber(string.sub(togglebutton, 3, 3))
-                local HeroSituRespawn = tonumber(string.sub(togglebutton, 4, 4))
-                local PassiveGold = tonumber(string.sub(togglebutton, 5, 5))
-                local NoFogOfWar = tonumber(string.sub(togglebutton, 6, 6))
-                local NoSpawnCreeps = tonumber(string.sub(togglebutton, 7, 7))
-                local WatchTowerHidden = tonumber(string.sub(togglebutton, 8, 8))
-                local BuildHidden = tonumber(string.sub(togglebutton, 9, 9))
-                local BuildingInvulnerability = tonumber(string.sub(togglebutton, 10, 10))
+                    local EasyBuy = tonumber(string.sub(togglebutton, 1, 1))
+                    local FreeSpells = tonumber(string.sub(togglebutton, 2, 2))
+                    local HeroFastRespawn = tonumber(string.sub(togglebutton, 3, 3))
+                    local HeroSituRespawn = tonumber(string.sub(togglebutton, 4, 4))
+                    local PassiveGold = tonumber(string.sub(togglebutton, 5, 5))
+                    local NoFogOfWar = tonumber(string.sub(togglebutton, 6, 6))
+                    local NoSpawnCreeps = tonumber(string.sub(togglebutton, 7, 7))
+                    local WatchTowerHidden = tonumber(string.sub(togglebutton, 8, 8))
+                    local BuildHidden = tonumber(string.sub(togglebutton, 9, 9))
+                    local BuildingInvulnerability = tonumber(string.sub(togglebutton, 10, 10))
 
-                e.checked = EasyBuy
-                FiveCloudCustomEvent:EasyBuy(e)
-                e.checked = FreeSpells
-                FiveCloudCustomEvent:FreeSpells(e)
-                e.checked = HeroFastRespawn
-                FiveCloudCustomEvent:HeroFastRespawn(e)
-                e.checked = HeroSituRespawn
-                FiveCloudCustomEvent:HeroSituRespawn(e)
-                e.checked = PassiveGold
-                FiveCloudCustomEvent:PassiveGold(e)
-                e.checked = NoFogOfWar
-                FiveCloudCustomEvent:NoFogOfWar(e)
-                e.checked = NoSpawnCreeps
-                AppEvent:NoSpawnCreeps(e)
-                e.checked = WatchTowerHidden
-                AppEvent:WatchTowerHidden(e)
-                e.checked = BuildHidden
-                AppEvent:BuildHidden(e)
-                e.checked = BuildingInvulnerability
-                AppEvent:BuildingInvulnerability(e)
+                    e.checked = EasyBuy
+                    FiveCloudCustomEvent:EasyBuy(e)
+                    e.checked = FreeSpells
+                    FiveCloudCustomEvent:FreeSpells(e)
+                    e.checked = HeroFastRespawn
+                    FiveCloudCustomEvent:HeroFastRespawn(e)
+                    e.checked = HeroSituRespawn
+                    FiveCloudCustomEvent:HeroSituRespawn(e)
+                    e.checked = PassiveGold
+                    FiveCloudCustomEvent:PassiveGold(e)
+                    e.checked = NoFogOfWar
+                    FiveCloudCustomEvent:NoFogOfWar(e)
+                    e.checked = NoSpawnCreeps
+                    AppEvent:NoSpawnCreeps(e)
+                    e.checked = WatchTowerHidden
+                    AppEvent:WatchTowerHidden(e)
+                    e.checked = BuildHidden
+                    AppEvent:BuildHidden(e)
+                    e.checked = BuildingInvulnerability
+                    AppEvent:BuildingInvulnerability(e)
 
-                AppEvent:RemoveWards(e)
+                    AppEvent:RemoveWards(e)
 
-                local current_dummys = Entities:FindAllByClassname("npc_dota_hero_target_dummy")
-                if current_dummys then
-                    for k, ent in pairs(current_dummys) do
-                        ent:RemoveSelf()
+                    local current_dummys = Entities:FindAllByClassname("npc_dota_hero_target_dummy")
+                    if current_dummys then
+                        for k, ent in pairs(current_dummys) do
+                            ent:RemoveSelf()
+                        end
                     end
+
+                    for i, v in ipairs(wards) do
+                        local unit = CreateUnitByName("npc_dota_observer_wards", Vector(v[1], v[2], v[3]), true, nil,
+                            nil, v[4])
+                        unit:AddNewModifier(hero, nil, "modifier_item_buff_ward", {
+                            duration = v[5]
+                        })
+                    end
+
+                    for i, v in ipairs(sentries) do
+                        local unit = CreateUnitByName("npc_dota_sentry_wards", Vector(v[1], v[2], v[3]), true, nil, nil,
+                            v[4])
+                        unit:AddNewModifier(hero, nil, "modifier_item_buff_ward", {
+                            duration = v[5]
+                        })
+                    end
+
+                    for i, v in ipairs(dummys) do
+                        local unit = CreateUnitByName("npc_dota_hero_target_dummy", Vector(v[1], v[2], v[3]), true, nil,
+                            nil, DOTA_TEAM_NEUTRALS)
+                    end
+
+                    hero:SetOrigin(Vector(heroinfo[1], heroinfo[2], heroinfo[3]))
+
+                    FiveCloudSDK:Message("#RestoreStateOK", e.playerid)
+
+                    local player = PlayerResource:GetPlayer(e.playerid)
+                    CustomGameEventManager:Send_ServerToPlayer(player, "MoveCameraToHero", {})
                 end
-
-                for i, v in ipairs(wards) do
-                    local unit = CreateUnitByName("npc_dota_observer_wards", Vector(v[1], v[2], v[3]), true, nil, nil,
-                        v[4])
-                    unit:AddNewModifier(hero, nil, "modifier_item_buff_ward", {
-                        duration = v[5]
-                    })
-                end
-
-                for i, v in ipairs(sentries) do
-                    local unit = CreateUnitByName("npc_dota_sentry_wards", Vector(v[1], v[2], v[3]), true, nil, nil,
-                        v[4])
-                    unit:AddNewModifier(hero, nil, "modifier_item_buff_ward", {
-                        duration = v[5]
-                    })
-                end
-
-                for i, v in ipairs(dummys) do
-                    local unit = CreateUnitByName("npc_dota_hero_target_dummy", Vector(v[1], v[2], v[3]), true, nil,
-                        nil, DOTA_TEAM_NEUTRALS)
-                end
-
-                hero:SetOrigin(Vector(heroinfo[1], heroinfo[2], heroinfo[3]))
-
-                FiveCloudSDK:Message("#RestoreStateOK", e.playerid)
-
-                local player = PlayerResource:GetPlayer(e.playerid)
-                CustomGameEventManager:Send_ServerToPlayer(player, "MoveCameraToHero", {})
             end
         end
+        FiveCloudSDK:HttpPostWithSign("/dota2/map/RestoreState", e.playerid, {}, func)
+    else
+        FiveCloudSDK:Message("#NotIsCloudMode", e.playerid, "error")
     end
-    FiveCloudSDK:HttpPostWithSign("/dota2/map/RestoreState", e.playerid, {}, func)
 end

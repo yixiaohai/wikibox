@@ -128,6 +128,7 @@ const english = {
     "EntIsNull": "Entity IsNull",
     "EntNotIsAlive": "Entity Not IsAlive",
     "Particle": "Particle",
+    "EntError": "You need to first click on Entity Overview to count entities",
     // recreation
     "feedbackTitle": "If you have any comments or suggestions about this map, you can send them to us so that we can continuously improve the gaming experience.",
 
@@ -146,6 +147,11 @@ const english = {
     "NoFunction": "The function does not exist",
     "AbilityDisabled": "ability has been disabled",
     "HasAbility": "You already have this ability",
+    "NotIsCloudMode": "Cloud platform functionality not enabled",
+    "NoMail": "no emails",
+    "GetMailError" : "Failed to obtain email",
+    "IsRead" : "Is read",
+    "NotIsRead" : "Not is read",
 
 }
 

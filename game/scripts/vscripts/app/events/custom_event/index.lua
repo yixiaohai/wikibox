@@ -9,6 +9,7 @@ require("app.events.custom_event.map")
 require("app.events.custom_event.recreation")
 require("app.events.custom_event.range")
 require("app.events.custom_event.quickCommands")
+require("app.events.custom_event.system")
 
 function AppEvent:Index(e)
     if type(AppEvent[e.event]) == "function" then

@@ -42,7 +42,7 @@ function FiveCloudCustomEvent:EntIsNull(e)
             end
         end
     else
-        FiveCloudSDK:Message("需要先点击实体概览统计实体", e.playerid, "info")
+        FiveCloudSDK:Message("#EntError", e.playerid, "info")
     end
 end
 
@@ -60,7 +60,7 @@ function FiveCloudCustomEvent:EntNotIsAlive(e)
             end
         end
     else
-        FiveCloudSDK:Message("需要先点击实体概览统计实体", e.playerid, "info")
+        FiveCloudSDK:Message("#EntError", e.playerid, "info")
     end
 end
 

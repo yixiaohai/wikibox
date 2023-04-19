@@ -2,7 +2,11 @@ function FiveCloud:InitGameMode()
 
     FiveCloud:GameConfig()
 
-    if FiveCloudConfig["isCloudMode"] then
+    if FiveCloudConfig["isDebugMode"] then
+        SendToServerConsole("sv_cheats true")
+    end
+
+    if FiveCloudConfig["isCloudMode"] and FiveCloudConfig["IsDedicatedServer"] then
         if FiveCloudConfig["keyStatusCompleted"] then
             FiveCloudSDK:FiveCloudInit()
         else
@@ -10,7 +14,8 @@ function FiveCloud:InitGameMode()
         end
     end
 
-    ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(FiveCloudGameEvent, "OnGameRulesStateChange"), FiveCloudGameEvent) -- 监听游戏进程
+    ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(FiveCloudGameEvent, "OnGameRulesStateChange"),
+        FiveCloudGameEvent) -- 监听游戏进程
     ListenToGameEvent("player_chat", Dynamic_Wrap(FiveCloudGameEvent, "OnPlayerChat"), FiveCloudGameEvent) -- 聊天
     ListenToGameEvent("npc_spawned", Dynamic_Wrap(FiveCloudGameEvent, "OnNPCSpawned"), FiveCloudGameEvent) -- 监听单位生成
     ListenToGameEvent("entity_killed", Dynamic_Wrap(FiveCloudGameEvent, "OnEntityKilled"), FiveCloudGameEvent) -- 监听单位死亡

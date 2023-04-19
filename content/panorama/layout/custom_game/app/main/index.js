@@ -50,4 +50,6 @@
     )
 
 	GameUI.FiveCloudSDK.DrawTopMenu()
+
+	GameUI.FiveCloudSDK.SendCustomGameEvent('app_event', { event: 'OnJsCompleted' })
 })();

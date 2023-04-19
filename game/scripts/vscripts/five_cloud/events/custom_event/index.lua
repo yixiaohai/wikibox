@@ -22,10 +22,10 @@ function FiveCloudCustomEvent:Index(e)
         if FiveCloudConfig["isDebugMode"] then
             FiveCloudCustomEvent[e.event](self, e)
         else
-            FiveCloudSDK:Message("#NoIsDebugMode", e.playerid, "info")
+            FiveCloudSDK:Message("#NoIsDebugMode", e.playerid, "error")
         end
     else
-        FiveCloudSDK:Message("#NoFunction event : " .. e.event, e.playerid, "info")
+        FiveCloudSDK:Message("#NoFunction event : " .. e.event, e.playerid, "error")
     end
 end
 

@@ -128,6 +128,7 @@ const schinese = {
     "EntIsNull": "空实体",
     "EntNotIsAlive": "死亡实体",
     "Particle": "特效",
+    "EntError" : "需要先点击实体概览统计实体",
     // recreation
     "feedbackTitle": "您如果对本地图有任何的意见和建议，都可以发送给我们，以便我们不断改进游戏体验。",
 
@@ -146,6 +147,12 @@ const schinese = {
     "NoFunction": "该函数不存在",
     "AbilityDisabled": "该技能已禁用",
     "HasAbility": "已拥有该技能",
+    "NotIsCloudMode" : "未开启网络功能",
+    "NoMail" : "暂无邮件",
+    "GetMailError" : "获取邮件失败",
+    "IsRead" : "已读",
+    "NotIsRead" : "未读",
+    
 
 }
 

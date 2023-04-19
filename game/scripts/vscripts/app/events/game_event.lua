@@ -19,7 +19,7 @@ function GameEvent:OnEntityKilled(e)
     local killed = EntIndexToHScript(e.entindex_killed) -- 被杀
     local attacker = EntIndexToHScript(e.entindex_attacker) -- 凶手
 
-    if FiveCloudConfig["isCloudMode"] then
+    if FiveCloudConfig["isCloudMode"] and FiveCloudConfig["IsDedicatedServer"] then
         if killed:GetClassname() == "npc_dota_fort" then
             for nPlayerID = 0, (DOTA_MAX_TEAM_PLAYERS - 1) do
                 if PlayerResource:GetConnectionState(nPlayerID) == DOTA_CONNECTION_STATE_CONNECTED then

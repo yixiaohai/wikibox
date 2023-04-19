@@ -60,7 +60,7 @@ function FiveCloudSDK:LoginForAllPlayer()
                         FiveCloudSDK:Message(res.message, playerid)
                     else
                         if res.code == 40002 then
-                            FiveCloudSDK:Message("非服务器主机", playerid)
+                            FiveCloudSDK:Message("#NotIsCloudMode", playerid, "error")
                         else
                             FiveCloudSDK:Message(res.message, playerid)
                         end

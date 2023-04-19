@@ -14,7 +14,7 @@ let MailList = (data) => {
 					const content = element.content
 					const date = element.updateAt
 
-					let read = isRead == 1 ? '已读' : '未读'
+					let read = isRead == 1 ? GameUI.FiveCloudLocalize.CustomLocalize('#IsRead') : GameUI.FiveCloudLocalize.CustomLocalize('#NotIsRead')
 
 					let panel = $.CreatePanel('Panel', $('#MailList'), '')
 					panel.BLoadLayoutSnippet('mail')
@@ -43,17 +43,18 @@ let MailList = (data) => {
 			MailCount(num)
 		}
 	} else {
-		$('#MailContent').text = '获取右键失败'
+		$('#MailContent').text = GameUI.FiveCloudLocalize.CustomLocalize('#GetMailError')
 	}
 }
 
 let MailCount = (num) =>{
 	if (num == 0){
-		$('#MailContent').text = '暂无邮件'
+		$('#MailContent').text = GameUI.FiveCloudLocalize.CustomLocalize('#NoMail')
 	}
 }
 
 let OnOpen = () => {
+	GameUI.FiveCloudConfig.currentAction = ''
 	GameUI.FiveCloudConfig.mouseClickListen = true
 	GameUI.FiveCloudSDK.SendCustomGameEvent('five_cloud_system_event', { event: 'GetMailList' })
 }

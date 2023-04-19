@@ -11,7 +11,7 @@ function FiveCloudSystemEvent:Index(e)
     if type(FiveCloudSystemEvent[e.event]) == "function" then
         FiveCloudSystemEvent[e.event](self, e)
     else
-        FiveCloudSDK:Message("#NoFunction event : " .. e.event, e.playerid, "info")
+        FiveCloudSDK:Message("#NoFunction event : " .. e.event, e.playerid, "error")
     end
 end
 

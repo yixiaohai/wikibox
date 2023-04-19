@@ -20,7 +20,7 @@ let ShowTopMenu = () => {
         }
     }
 
-    if (GameUI.FiveCloudConfig.isCloudMode) {
+    if (GameUI.FiveCloudConfig.isCloudMode && GameUI.FiveCloudConfig.IsDedicatedServer) {
         GameUI.FiveCloudSDK.AddTopMenu(
             'file://{resources}/layout/custom_game/five_cloud/images/feedback.png',
             'feedbackButton',
