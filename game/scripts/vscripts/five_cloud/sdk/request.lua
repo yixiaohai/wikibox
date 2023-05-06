@@ -41,7 +41,11 @@ local function MakeSign(data)
         end
     end
 
-    signature = md5.sumhexa(str .. "&key=" .. GetDedicatedServerKeyV3(FiveCloudConfig["requestKey"]))
+    if FiveCloudConfig["isTestMap"] then
+        signature = md5.sumhexa(str .. "&key=" .. FiveCloudConfig["testKey"])
+    else
+        signature = md5.sumhexa(str .. "&key=" .. GetDedicatedServerKeyV3(FiveCloudConfig["requestKey"]))
+    end
 
     data["signature"] = signature
 

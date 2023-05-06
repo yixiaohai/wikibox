@@ -58,7 +58,7 @@
         "MinimapMisclickTimeDescribe"  "Right click on the delay amount of the mini map, the default is 0.2s" 
         "TauntNoCD"  "Mockery without CD" 
 
-        "ProfilingReadReport"  "Print Performance Test Report" 
+ 
 
         // Neutralcamp
         "Neutralcamp"  "Neutral Camp" 
@@ -70,15 +70,9 @@
         "DotaRespawnRoshan"  "Respawn Roshan" 
         "RoshanUpgradeRate"  "Set Roshan upgrade interval" 
         "RoshanUpgradeRateDescribe"  "Unit in seconds" 
-        "FindAllInSphere"  "Find All In Sphere" 
-        "FindAllInSphereDescribe"  "Please enter a range" 
+
         
         // range
-        "Range"  "Range" 
-        "ShowRange"  "Show custom range" 
-        "ShowRangeDescribe"  "Set to 0 Cancel" 
-        "GetDistance"  "Measuring distance" 
-        "GetDistanceDescribe"  "Requires and can only select two units. Currently, only units that you can control are supported for measurement" 
         "ShowBoundingRadius"  "Show bounding radius" 
         "ShowSelectionBoxes"  "Show selection boxes" 
         "TowerDayVisionRange"  "Tower Day vision" 

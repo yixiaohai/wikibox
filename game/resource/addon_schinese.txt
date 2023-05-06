@@ -59,7 +59,7 @@
         "MinimapMisclickTime"  "右键点击小地图延迟" 
         "MinimapMisclickTimeDescribe"  "右键点击小地图的延迟量，默认是0.2s" 
         "TauntNoCD"  "嘲讽无CD" 
-        "ProfilingReadReport"  "打印性能测试报告" 
+        
 
         // Neutralcamp
         "Neutralcamp"  "野怪营地" 
@@ -71,15 +71,9 @@
         "DotaRespawnRoshan"  "刷新 Roshan" 
         "RoshanUpgradeRate"  "设置 Roshan 升级间隔" 
         "RoshanUpgradeRateDescribe"  "单位为秒" 
-        "FindAllInSphere"  "查找周围实体" 
-        "FindAllInSphereDescribe"  "请输入范围" 
+
         
         // range
-        "Range"  "范围" 
-        "ShowRange"  "自定义显示范围" 
-        "ShowRangeDescribe"  "设置为0取消" 
-        "GetDistance"  "测量距离" 
-        "GetDistanceDescribe"  "需要且仅可选择两个单位 目前仅支持测量你能控制的单位" 
         "ShowBoundingRadius"  "显示边界体积" 
         "ShowSelectionBoxes"  "显示选择体积" 
         "TowerDayVisionRange"  "防御塔白天视野" 

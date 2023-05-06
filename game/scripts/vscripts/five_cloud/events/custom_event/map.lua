@@ -34,6 +34,12 @@ function FiveCloudCustomEvent:SpawnRuneArcanePressed(e)
     FiveCloudCustomEvent:SpawnRuneInFrontOfUnit(hero, DOTA_RUNE_ARCANE)
 end
 
+-- 护盾神符
+function FiveCloudCustomEvent:SpawnRuneShieldPressed(e)
+    local hero = PlayerResource:GetPlayer(e.playerid):GetAssignedHero()
+    FiveCloudCustomEvent:SpawnRuneInFrontOfUnit(hero, DOTA_RUNE_SHIELD)
+end
+
 -- 刷神符
 function FiveCloudCustomEvent:SpawnRuneInFrontOfUnit(unit, runeType)
     if unit == nil then

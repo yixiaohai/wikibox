@@ -9,10 +9,16 @@ function AppEvent:NeutralcampRefreshRange(e)
                              "neutralcamp_good_3_regionEntity", "neutralcamp_good_4_regionEntity",
                              "neutralcamp_good_5_regionEntity", "neutralcamp_good_7_regionEntity",
                              "neutralcamp_good_8_regionEntity", "neutralcamp_good_9_regionEntity",
+                             "neutralcamp_good_10_regionEntity", "neutralcamp_good_11_regionEntity",
+                             "neutralcamp_good_12_regionEntity", "neutralcamp_good_13_regionEntity",
+                             "neutralcamp_good_14_regionEntity", "neutralcamp_good_15_regionEntity",
                              "neutralcamp_evil_1_regionEntity", "neutralcamp_evil_2_regionEntity",
                              "neutralcamp_evil_3_regionEntity", "neutralcamp_evil_4_regionEntity",
                              "neutralcamp_evil_5_regionEntity", "neutralcamp_evil_6_regionEntity",
-                             "neutralcamp_evil_8_regionEntity", "neutralcamp_evil_9_regionEntity"}
+                             "neutralcamp_evil_8_regionEntity", "neutralcamp_evil_9_regionEntity",
+                             "neutralcamp_evil_10_regionEntity", "neutralcamp_evil_11_regionEntity",
+                             "neutralcamp_evil_12_regionEntity", "neutralcamp_evil_13_regionEntity",
+                             "neutralcamp_evil_14_regionEntity", "neutralcamp_evil_15_regionEntity"}
 
     for i = 1, #neutralcampList do
         DoEntFire(neutralcampList[i], v, "", 0, {}, {})
@@ -334,6 +340,8 @@ function AppEvent:RestoreState(e)
                     for i, v in ipairs(dummys) do
                         local unit = CreateUnitByName("npc_dota_hero_target_dummy", Vector(v[1], v[2], v[3]), true, nil,
                             nil, DOTA_TEAM_NEUTRALS)
+
+                            unit:SetControllableByPlayer(e.playerid, false)
                     end
 
                     hero:SetOrigin(Vector(heroinfo[1], heroinfo[2], heroinfo[3]))

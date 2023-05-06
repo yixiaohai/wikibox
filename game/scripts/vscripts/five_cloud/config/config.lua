@@ -1,6 +1,5 @@
 if not FiveCloudConfig then
     FiveCloudConfig = {
-        ["gameName"] = "dota_sendbox", -- 项目名称
         ["rpgConfig"] = false, -- 为rpg预设的游戏设置
         ["isCloudMode"] = true, -- 是否开启云平台
         ["isDebugMode"] = true, -- 调试模式
@@ -27,6 +26,7 @@ if not FiveCloudConfig then
             FiveCloudConfig["appid"] = "116584138633471"
             FiveCloudConfig["appsecret"] = "D4E11AC4DE8BF26151FBBD1DC0E2003E"
             FiveCloudConfig["requestKey"] = "fiveCloud"
+            FiveCloudConfig["testKey"] = "29F91FDB5EC131610E6F36D0B80CBFEDC7780BBA"
         else
             FiveCloudConfig["appid"] = "116584138695681"
             FiveCloudConfig["appsecret"] = "C14222DEAE367DBE0612650D0CE9C1C5"

@@ -99,7 +99,7 @@ end
 
 function FiveCloudCustomEvent:DotaLaunchCustomGame()
     local data = {
-        command = "dota_launch_custom_game " .. FiveCloudConfig["gameName"] .. " " .. GetMapName()
+        command = "restart"
     }
     FiveCloudCustomEvent:SendToServerConsole(data)
 end

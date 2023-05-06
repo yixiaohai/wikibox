@@ -122,14 +122,25 @@ const schinese = {
     "AbilityCharges": "充能点数：",
     "AbilityChargeRestoreTime": "充能时间：",
 
+    // range
+    "Range": "范围",
+    "ShowRange": "自定义显示范围",
+    "ShowRangeDescribe": "设置为0取消",
+    "GetDistance": "测量距离",
+    "GetDistanceDescribe": "需要且仅可选择两个单位 目前仅支持测量你能控制的单位",
+
     // developer
     "Ent": "实体",
     "EntOverview": "实体概览",
     "EntIsNull": "空实体",
     "EntNotIsAlive": "死亡实体",
     "Particle": "特效",
-    "EntError" : "需要先点击实体概览统计实体",
-    "ConfigAndStatus" : "当前配置状态",
+    "EntError": "需要先点击实体概览统计实体",
+    "ConfigAndStatus": "当前配置状态",
+    "FindAllInSphere": "查找周围实体",
+    "FindAllInSphereDescribe": "请输入范围",
+    "ProfilingReadReport": "打印性能测试报告",
+
     // recreation
     "feedbackTitle": "您如果对本地图有任何的意见和建议，都可以发送给我们，以便我们不断改进游戏体验。",
 
@@ -148,12 +159,12 @@ const schinese = {
     "NoFunction": "该函数不存在",
     "AbilityDisabled": "该技能已禁用",
     "HasAbility": "已拥有该技能",
-    "NotIsCloudMode" : "未开启网络功能",
-    "NoMail" : "暂无邮件",
-    "GetMailError" : "获取邮件失败",
-    "IsRead" : "已读",
-    "NotIsRead" : "未读",
-    
+    "NotIsCloudMode": "未开启网络功能",
+    "NoMail": "暂无邮件",
+    "GetMailError": "获取邮件失败",
+    "IsRead": "已读",
+    "NotIsRead": "未读",
+
 
 }
 

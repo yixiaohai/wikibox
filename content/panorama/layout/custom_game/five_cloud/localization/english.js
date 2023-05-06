@@ -122,6 +122,13 @@ const english = {
     "AbilityCharges": "Charges:",
     "AbilityChargeRestoreTime": "Charge restore time:",
 
+    // range
+    "Range": "Range",
+    "ShowRange": "Show custom range",
+    "ShowRangeDescribe": "Set to 0 Cancel",
+    "GetDistance": "Measuring distance",
+    "GetDistanceDescribe": "Requires and can only select two units. Currently, only units that you can control are supported for measurement",
+
     // developer
     "Ent": "Entity",
     "EntOverview": "Entity overview",
@@ -129,7 +136,10 @@ const english = {
     "EntNotIsAlive": "Entity Not IsAlive",
     "Particle": "Particle",
     "EntError": "You need to first click on Entity Overview to count entities",
-    "ConfigAndStatus" : "Config and status",
+    "ConfigAndStatus": "Config and status",
+    "FindAllInSphere": "Find All In Sphere",
+    "FindAllInSphereDescribe": "Please enter a range",
+    "ProfilingReadReport": "Print Performance Test Report",
     // recreation
     "feedbackTitle": "If you have any comments or suggestions about this map, you can send them to us so that we can continuously improve the gaming experience.",
 
@@ -150,9 +160,9 @@ const english = {
     "HasAbility": "You already have this ability",
     "NotIsCloudMode": "Cloud platform functionality not enabled",
     "NoMail": "no emails",
-    "GetMailError" : "Failed to obtain email",
-    "IsRead" : "Is read",
-    "NotIsRead" : "Not is read",
+    "GetMailError": "Failed to obtain email",
+    "IsRead": "Is read",
+    "NotIsRead": "Not is read",
 
 }
 
