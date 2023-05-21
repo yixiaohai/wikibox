@@ -48,6 +48,7 @@
         "BuildingHeal"  "Building heal" 
         "DotaSpawnRune"  "Dota spawn rune" 
         "RemoveWards"  "Remove wards" 
+        "RefreshMiniboss" "Refresh Miniboss"
 
         // quickCommands
         "quickCommandsButton"  "Quick commands" 
@@ -73,6 +74,7 @@
 
         
         // range
+        "Range" "range"
         "ShowBoundingRadius"  "Show bounding radius" 
         "ShowSelectionBoxes"  "Show selection boxes" 
         "TowerDayVisionRange"  "Tower Day vision" 

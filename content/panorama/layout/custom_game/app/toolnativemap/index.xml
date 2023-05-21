@@ -103,6 +103,12 @@
 				</Button>
 			</Panel>
 			<Panel class="fc-tool-row">
+				<Button class="fc-tool-button"
+					onactivate="GameUI.FiveCloudSDK.SendCustomGameEvent('app_event',{ event: 'RefreshMiniboss' })">
+					<Label text="#RefreshMiniboss" />
+				</Button>
+			</Panel>
+			<Panel class="fc-tool-row">
 				<Label class="fc-tool-row-title" text="#Range" />
 			</Panel>
 			<Panel class="fc-tool-row">

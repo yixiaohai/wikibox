@@ -341,7 +341,7 @@ function AppEvent:RestoreState(e)
                         local unit = CreateUnitByName("npc_dota_hero_target_dummy", Vector(v[1], v[2], v[3]), true, nil,
                             nil, DOTA_TEAM_NEUTRALS)
 
-                            unit:SetControllableByPlayer(e.playerid, false)
+                        unit:SetControllableByPlayer(e.playerid, false)
                     end
 
                     hero:SetOrigin(Vector(heroinfo[1], heroinfo[2], heroinfo[3]))
@@ -356,5 +356,19 @@ function AppEvent:RestoreState(e)
         FiveCloudSDK:HttpPostWithSign("/dota2/map/RestoreState", e.playerid, {}, func)
     else
         FiveCloudSDK:Message("#NotIsCloudMode", e.playerid, "error")
+    end
+end
+
+-- 刷新痛苦魔方
+function AppEvent:RefreshMiniboss(e)
+    local v1 = Vector(-8128, -1216, 256)
+    local v2 = Vector(8128, 1024, 256)
+    local m1 = Entities:FindAllByClassnameWithin("npc_dota_miniboss", v1, 1)
+    local m2 = Entities:FindAllByClassnameWithin("npc_dota_miniboss", v1, 1)
+    if #m1 == 0 then
+        CreateUnitByName("npc_dota_miniboss", v1, true, nil, nil, DOTA_TEAM_NEUTRALS)
+    end
+    if #m2 == 0 then
+        CreateUnitByName("npc_dota_miniboss", v2, true, nil, nil, DOTA_TEAM_NEUTRALS)
     end
 end

@@ -50,6 +50,7 @@
         "BuildingHeal"  "治疗建筑" 
         "DotaSpawnRune"  "刷新神符" 
         "RemoveWards"  "移除守卫" 
+        "RefreshMiniboss" "刷新痛苦魔方"
 
         // quickCommands
         "quickCommandsButton"  "快捷指令" 
@@ -74,6 +75,7 @@
 
         
         // range
+        "Range" "范围"
         "ShowBoundingRadius"  "显示边界体积" 
         "ShowSelectionBoxes"  "显示选择体积" 
         "TowerDayVisionRange"  "防御塔白天视野" 
