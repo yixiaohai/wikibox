@@ -364,7 +364,7 @@ function AppEvent:RefreshMiniboss(e)
     local v1 = Vector(-8128, -1216, 256)
     local v2 = Vector(8128, 1024, 256)
     local m1 = Entities:FindAllByClassnameWithin("npc_dota_miniboss", v1, 1)
-    local m2 = Entities:FindAllByClassnameWithin("npc_dota_miniboss", v1, 1)
+    local m2 = Entities:FindAllByClassnameWithin("npc_dota_miniboss", v2, 1)
     if #m1 == 0 then
         CreateUnitByName("npc_dota_miniboss", v1, true, nil, nil, DOTA_TEAM_NEUTRALS)
     end
