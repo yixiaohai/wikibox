@@ -61,7 +61,7 @@ function FiveCloudGameEvent:OnEntityKilled(e)
 
     if killed:IsRealHero() and not killed:IsClone() then
         FiveCloudSDK:Print(killed:GetAbsOrigin(), "killed:GetAbsOrigin")
-        if FiveCloudConfig["heroSituRespawnMode"] then
+        if FiveCloudConfig["HeroSituRespawnMode"] then
             killed:SetRespawnPosition(killed:GetAbsOrigin())
         end
     end
